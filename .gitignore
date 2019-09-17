@@ -1,0 +1,10 @@
+*/node_modules
+.vscode/
+.idea/
+/coverage
+*/dist
+package-lock.json
+yarn-log.lock
+*.log
+*.orig
+stats.json

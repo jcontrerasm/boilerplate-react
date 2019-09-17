@@ -1,0 +1,74 @@
+{
+  "name": "boilerplate-react",
+  "version": "0.0.1",
+  "description": "Boilerplate React",
+  "main": "./src/index.tsx",
+  "scripts": {
+    "client:start": "webpack-dev-server --devtool inline-source-map --hot --config config/webpack/webpack.client.dev.config.js",
+    "client:build": "webpack --config config/webpack/webpack.client.prod.config.js",
+    "test": "jest --config ./config/jest/jest.config.js",
+    "lint": "eslint '**/*.tsx'",
+    "stats": "webpack --profile --json --config config/webpack/webpack.client.prod.config.js > stats.json",
+    "analyze": "webpack-bundle-analyzer stats.json dist/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "bash ./scripts/pre-commit.sh"
+    }
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "styled-components",
+    "jest"
+  ],
+  "author": "Juan Contreras <jcontrerasmeneses@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcontrerasm/boilerplate-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jcontrerasm/boilerplate-react/issues"
+  },
+  "homepage": "http://localhost/",
+  "dependencies": {
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "styled-components": "4.3.2"
+  },
+  "devDependencies": {
+    "@types/jest": "24.0.18",
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.9.0",
+    "awesome-typescript-loader": "5.2.1",
+    "babel-eslint": "10.0.3",
+    "clean-webpack-plugin": "3.0.0",
+    "css-loader": "3.2.0",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-to-json": "3.4.0",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "1.7.0",
+    "eslint-plugin-typescript": "0.14.0",
+    "file-loader": "4.2.0",
+    "html-webpack-plugin": "3.2.0",
+    "husky": "3.0.5",
+    "jest": "24.9.0",
+    "jest-transform-css": "2.0.0",
+    "mini-css-extract-plugin": "0.8.0",
+    "style-loader": "1.0.0",
+    "stylelint": "11.0.0",
+    "stylelint-custom-processor-loader": "0.6.0",
+    "ts-jest": "24.1.0",
+    "url-loader": "2.1.0",
+    "webpack": "4.40.2",
+    "webpack-bundle-analyzer": "3.5.0",
+    "webpack-cli": "3.3.8",
+    "webpack-dev-server": "3.8.1"
+  }
+}
