@@ -2,7 +2,7 @@
 cd ..
 # exit if no files changed
 if [ -n "$(git status --porcelain | grep '.tsx\?$')" ]; then
-    cd app
+    cd app/
     echo "Initializing unit tests...";
     npm run lint && npm test
     RESULT=$?

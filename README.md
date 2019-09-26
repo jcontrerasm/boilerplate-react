@@ -26,7 +26,7 @@ Entrar en la carpeta app
 - Ejecutar desde la raiz el comando **`yarn client:start`** o **`npm run client:start`**
 
 #### Construcción de la aplicación para producción
-- Ejecutar desde la raiz el comando **`make client:build`** o **`npm run client:build`**
+- Ejecutar desde la raiz el comando **`yarn client:build`** o **`npm run client:build`**
 
 ## Aplicación
 **Local URL:** http://localhost:3000
