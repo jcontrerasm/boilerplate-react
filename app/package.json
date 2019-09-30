@@ -9,12 +9,12 @@
     "test": "jest --config ./config/jest/jest.config.js",
     "lint": "eslint '**/*.tsx'",
     "stats": "webpack --profile --json --config config/webpack/webpack.client.prod.config.js > stats.json",
-    "analyze": "webpack-bundle-analyzer stats.json dist/"
+    "analyze": "webpack-bundle-analyzer stats.json dist/",
+    "server": "nodemon --watch src/server src/server/index.ts",
+    "server:mock": "node ./src/client/mocks/server/index"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "bash ./scripts/pre-commit.sh"
-    }
+    "hooks": {}
   },
   "keywords": [
     "react",
@@ -31,10 +31,14 @@
   "bugs": {
     "url": "https://github.com/jcontrerasm/boilerplate-react/issues"
   },
-  "homepage": "http://localhost/",
+  "homepage": "http://localhost:3000/",
   "dependencies": {
+    "axios": "0.19.0",
+    "express": "4.17.1",
+    "nodemon": "1.19.3",
     "react": "16.9.0",
     "react-dom": "16.9.0",
+    "react-router-dom": "5.1.1",
     "styled-components": "4.3.2"
   },
   "devDependencies": {
@@ -60,6 +64,7 @@
     "husky": "3.0.5",
     "jest": "24.9.0",
     "jest-transform-css": "2.0.0",
+    "json-server": "0.15.1",
     "mini-css-extract-plugin": "0.8.0",
     "style-loader": "1.0.0",
     "stylelint": "11.0.0",
@@ -70,6 +75,8 @@
     "webpack": "4.40.2",
     "webpack-bundle-analyzer": "3.5.0",
     "webpack-cli": "3.3.8",
-    "webpack-dev-server": "3.8.1"
+    "webpack-dev-middleware": "3.7.2",
+    "webpack-dev-server": "3.8.1",
+    "webpack-hot-middleware": "2.25.0"
   }
 }

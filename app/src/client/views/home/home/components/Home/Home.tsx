@@ -1,13 +1,16 @@
 import * as React from 'react';
-import '../../assets/css/style.css';
+
+import { Navbar } from '../Navbar/Navbar';
+
 import { Container, List } from './styled';
 
-export const App = () => (
+export const Home = () => (
   <Container>
     <h1>Boilerplate React</h1>
     <div>
       <img src="/assets/images/react.gif" alt="react" />
     </div>
+    <Navbar />
     <p>Puedes trabajar con las siguientes tecnologias:</p>
     <List>
       <li>React</li>

@@ -8,3 +8,4 @@ yarn-log.lock
 *.log
 *.orig
 stats.json
+.env

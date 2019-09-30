@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Test for RequerimentAge Component when there is a value for Age should render correctly in "debug" mode 1`] = `ShallowWrapper {}`;

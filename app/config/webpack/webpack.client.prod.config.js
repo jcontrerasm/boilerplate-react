@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const outputDirectory = '../../dist';
+const buildDirectory = '../../dist';
+const outputDirectory = buildDirectory + '/client';
 const pathClient = path.join(__dirname, '../../client');
 
 module.exports = {
@@ -25,7 +26,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
           { loader: 'awesome-typescript-loader' },

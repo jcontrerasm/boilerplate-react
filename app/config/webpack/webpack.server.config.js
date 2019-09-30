@@ -1,16 +1,17 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 const buildDirectory = '../../dist';
-const outputDirectory = buildDirectory + '/client';
 const pathClient = path.join(__dirname, '../../client');
 
 module.exports = {
   mode: 'development',
-  entry: './src/client/index.tsx',
+  entry: [
+    'webpack-hot-middleware/client',
+    './src/client/index.tsx'
+  ],
   output: {
-    path: path.join(__dirname, outputDirectory),
+    path: path.join(__dirname, buildDirectory),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -36,21 +37,16 @@ module.exports = {
           { loader: 'style-loader' },
           { loader: 'css-loader' }
         ]
-      }
-    ]
-  },
-  devServer: {
-    port: 3000,
-    open: true,
-    historyApiFallback: true
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000',
+
+      },
+    ],
   },
   plugins: [
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [outputDirectory],
-    }),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: './public/favicon.ico'
-    })
-  ]
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+  ],
 };

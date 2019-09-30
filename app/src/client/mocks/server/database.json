@@ -1,0 +1,9 @@
+{
+  "authentication": {
+    "status": 200,
+    "message": "La autenticación solicitada se obtuvo correctamente",
+    "data": {
+      "isAuthenticated": true
+    }
+  }
+}
