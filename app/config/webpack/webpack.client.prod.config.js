@@ -52,7 +52,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.ico'
+      favicon: './public/favicon.ico',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.[hash].css'
